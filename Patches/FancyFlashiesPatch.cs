@@ -20,10 +20,10 @@ namespace FancyFlashies.Patches
         static int targetColorIndex = 0;
 
         [HarmonyPostfix]
-        static void FlashlightColourPatch(ref float ___sprintMeter)
+        static void FlashlightColourPatch()
         {
-            FlashlightItem[] flashlights = UnityEngine.Object.FindObjectsByType<FlashlightItem>(FindObjectsSortMode.None);
-            PlayerControllerB[] players = UnityEngine.Object.FindObjectsByType<PlayerControllerB>(FindObjectsSortMode.None);
+            FlashlightItem[] flashlights = Object.FindObjectsByType<FlashlightItem>(FindObjectsSortMode.None);
+            PlayerControllerB[] players = Object.FindObjectsByType<PlayerControllerB>(FindObjectsSortMode.None);
 
             if (Time.frameCount % 3 == 0)
             {
