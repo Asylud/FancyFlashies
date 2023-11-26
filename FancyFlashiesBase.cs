@@ -9,7 +9,7 @@ namespace FancyFlashies
     {
         private const string modGUID = "Asylud.FancyFlashies";
         private const string modName = "Fancy Flashies";
-        private const string modVersion = "1.0.0.0";
+        private const string modVersion = "1.0.1.0";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -23,7 +23,8 @@ namespace FancyFlashies
             }
 
             harmony.PatchAll(typeof(FancyFlashiesBase));
-            harmony.PatchAll(typeof(FancyFlashiesPatch));
+            harmony.PatchAll(typeof(FancyFlashlightPatch));
+            harmony.PatchAll(typeof(FancyPlayerControllerBPatch));
         }
     }
 }
